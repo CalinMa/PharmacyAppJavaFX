@@ -1,0 +1,16 @@
+
+
+.round-red {
+    -fx-background-color: #128c7e;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+    -fx-pref-width: 200px;
+}
+
+.main {
+    -fx-background-color: #dcf8c6;
+}
+.tabel {
+    -fx-background-color: #9cb89c;
+}

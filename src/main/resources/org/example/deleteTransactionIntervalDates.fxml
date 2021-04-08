@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.DeleteTransactionIntervalDates" styleClass="round-red" stylesheets="@style.css" >
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Delete Transactions that starts with date:" />
+        <TextField fx:id="txtDateStart" promptText="dd.mm.yyyy HH:mm"/>
+        <Label text="And ends with date:" />
+        <TextField fx:id="txtDateEnd" promptText="dd.mm.yyyy HH:mm"/>
+        <Button fx:id="btnTransactionDateDelete" text="Delete" onAction="#btnTransactionDateDeleteClick" styleClass="main" stylesheets="@style.css"/>
+    </HBox>
+    <padding>
+        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label text="Transaction results after delete:" />
+    <GridPane>
+        <children>
+            <TableView GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" fx:id="tblTransactionsDelete" editable="true">
+                <columns>
+                    <TableColumn fx:id="colIdTransaction" text="Id">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="idEntity" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="colIdDrugs" text="Drug id">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="drugId" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="colClientCard" text="Client card">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="clientCardNumber"  />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="colNumberOfPieces" text="Number of transactions">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="numberOfTransactions" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="colDateAndHour" text="Date and hour">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="dateAndHour" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </children>
+    </GridPane>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.SearchTransactionsBetweenDates" styleClass="round-red" stylesheets="@style.css" >
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Search Transactions that starts with date and hour:" />
+        <TextField fx:id="txtDateHourStart" promptText="dd.mm.yyyy HH:mm"/>
+        <Label text="And ends with date and hour:" />
+        <TextField fx:id="txtDateHourEnd" promptText="dd.mm.yyyy HH:mm"/>
+        <Button fx:id="btnTransactionDateHourSearch" text="Search" onAction="#btnSearchTransactionsBetweenDates" styleClass="main" stylesheets="@style.css"/>
+    </HBox>
+    <padding>
+        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label text="Transaction date search results:" />
+    <GridPane>
+        <children>
+            <TableView GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" fx:id="tblSearchTransactionsBetweenDates" editable="true">
+                <columns>
+                    <TableColumn fx:id="colIdTransaction" text="Id">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="idEntity" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="colIdDrugs" text="Drug id">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="drugId" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="colClientCard" text="Client card">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="clientCardNumber"  />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="colNumberOfPieces" text="Number of pieces">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="numberOfTransactions" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="colDateAndHour" text="Date and hour">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="dateAndHour" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </children>
+    </GridPane>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>

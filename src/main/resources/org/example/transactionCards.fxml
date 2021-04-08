@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.CardsOrderedByTransactions" styleClass="round-red" stylesheets="@style.css" >
+    <Label text="Cards sorted by number of transactions"/>
+    <GridPane>
+        <children>
+            <TableView fx:id="tblTransactionsCards" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" editable="true">
+                <columns>
+                    <TableColumn fx:id="colNumberOfTransactions" text="Number of transactions:">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="numberOfTransactions"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+
+                    <TableColumn fx:id="colCardNumber" text="Card number:">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="clientCardNumber"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+
+                </columns>
+            </TableView>
+        </children>
+    </GridPane>
+</VBox>

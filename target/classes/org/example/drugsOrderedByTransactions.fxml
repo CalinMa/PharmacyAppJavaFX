@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.DrugsOrderedByTransactions" styleClass="round-red" stylesheets="@style.css" >
+    <Label text="Drugs sorted by number of transactions"/>
+    <GridPane>
+        <children>
+            <TableView fx:id="tblDrugsWithTransactions" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" editable="true">
+                <columns>
+                    <TableColumn fx:id="colIdDrugByTransactions" text="Drug id: ">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="idDrug"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+
+                    <TableColumn fx:id="colDrugNameByTransactions" text="Drug name:">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="colDrugsByTransactions" text="Number of transactions:">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="numbersOfTransactions"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </children>
+    </GridPane>
+</VBox>

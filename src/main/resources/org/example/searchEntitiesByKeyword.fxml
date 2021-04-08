@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.SearchEntitiesByKeyword" styleClass="round-red" stylesheets="@style.css" >
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Search Drugs and Transactions:" />
+        <TextField fx:id="txtSearchText" promptText="Search text"/>
+        <Button fx:id="btnFullTextSearch" text="Search" onAction="#btnSearchEntitiesByKeyword" styleClass="main" stylesheets="@style.css"/>
+    </HBox>
+    <padding>
+        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <HBox>
+        <VBox alignment="CENTER" spacing="20.0" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+            <Label text="Searched Drug List:" />
+            <GridPane>
+                <children>
+                    <TableView GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS" fx:id="tblDrugs" editable="true">
+                        <columns>
+                            <TableColumn fx:id="colDrugId" text="Id">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="idEntity" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="colDrugPrice" text="Price">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="drugPrice" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="colDrugStock" text="Stock">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="numberOfDrugItems" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="colDrugName" text="Drug Name">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="drugName" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="colDrugProducer" text="Producer">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="drugProducer"  />
+                                </cellValueFactory>
+                            </TableColumn>
+
+
+                            <TableColumn fx:id="colWithoutRecipe" text="Recipe needed">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="drugNeedsRecipe" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                </children>
+            </GridPane>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </VBox>
+
+        <VBox alignment="CENTER" spacing="20.0" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+            <Label text="Searched Transaction List:" />
+            <GridPane>
+                <children>
+                    <TableView GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" GridPane.vgrow="ALWAYS"  fx:id="tblTransactions" editable="true">
+                        <columns>
+                            <TableColumn fx:id="colIdTransaction" text="Id">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="idEntity" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="colIdDrug" text="Drug Id">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="drugId" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="colClientCard" text="Client card">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="clientCardNumber"  />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="colNumberOfPieces" text="Number of pieces">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="numberOfTransactions" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="colDateAndHour" text="Date and Hour">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="dateAndHour" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                </children>
+            </GridPane>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </VBox>
+    </HBox>
+</VBox>
